@@ -1,0 +1,7 @@
+{{ $p := .p }}
+{{ $nivel := .nivel | default "h2" }}
+<article class="nota-item">
+  <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date | time.Format ":date_medium" }}</time>
+  <{{ $nivel }}><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></{{ $nivel }}>
+  <p>{{ $p.Description | default $p.Summary | plainify | truncate 220 }}</p>
+</article>

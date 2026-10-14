@@ -1,0 +1,46 @@
+baseURL = "https://marecoforense.com.py/"
+languageCode = "es"
+defaultContentLanguage = "es"
+title = "Mareco Forense"
+enableRobotsTXT = true
+# No se crea la página índice /tags/; sí las páginas de cada etiqueta.
+disableKinds = ["taxonomy"]
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "Peritaje informático forense en Paraguay: preservación, análisis y presentación de evidencia digital."
+  perito = "Víctor Rolando Mareco Belotto"
+  matricula = "4941"
+
+  # ---- COMPLETAR ANTES DE PUBLICAR ----
+  # Correo de contacto (ej.: "contacto@marecoforense.com.py")
+  email = ""
+  # WhatsApp en formato internacional, solo números (ej.: "595981000000")
+  whatsapp = ""
+  # Teléfono para mostrar tal cual (opcional)
+  telefono = ""
+
+[[menus.main]]
+  name = "Notas"
+  url = "/notas/"
+  weight = 10
+
+[[menus.main]]
+  name = "Servicios"
+  url = "/servicios/"
+  weight = 20
+
+[[menus.main]]
+  name = "Perfil"
+  url = "/perfil/"
+  weight = 30
+
+[[menus.main]]
+  name = "Contacto"
+  url = "/contacto/"
+  weight = 40

@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ if not (or site.Params.email site.Params.whatsapp site.Params.telefono) }}
+  {{ warnf "Falta completar los datos de contacto (email, whatsapp o telefono) en hugo.toml" }}
+{{ end }}
+<article>
+  <header class="pagina-cabecera">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="prose">
+    {{ .Content }}
+    <ul class="contacto">
+      {{ with site.Params.email }}<li><strong>Correo:</strong> <a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
+      {{ with site.Params.whatsapp }}<li><strong>WhatsApp:</strong> <a href="https://wa.me/{{ . }}">+{{ . }}</a></li>{{ end }}
+      {{ with site.Params.telefono }}<li><strong>Teléfono:</strong> {{ . }}</li>{{ end }}
+    </ul>
+  </div>
+</article>
+{{ end }}

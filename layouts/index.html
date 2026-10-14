@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-texto">
+    <h1>{{ .Params.titular | default .Title }}</h1>
+    <p class="bajada">{{ .Params.bajada }}</p>
+    <p><a class="boton" href="/contacto/">Consultar un caso</a></p>
+  </div>
+  <div class="etiqueta" role="img" aria-label="Perito informático forense, matrícula de la Corte Suprema de Justicia número {{ site.Params.matricula }}">
+    <span class="etiqueta-num">{{ site.Params.matricula }}</span>
+    <span class="etiqueta-txt">Matrícula CSJ</span>
+  </div>
+</section>
+
+<section class="bloque">
+  <h2>Últimas notas</h2>
+  {{ $notas := where site.RegularPages "Section" "notas" }}
+  {{ range first 5 $notas }}
+    {{ partial "nota-item.html" (dict "p" . "nivel" "h3") }}
+  {{ else }}
+    <p class="vacio">Todavía no hay notas publicadas.</p>
+  {{ end }}
+  {{ if $notas }}<p class="mas"><a href="/notas/">Ver todas las notas</a></p>{{ end }}
+</section>
+
+<section class="bloque llamado">
+  <h2>Servicios</h2>
+  <p>Peritajes judiciales y extrajudiciales, preservación de evidencia, análisis de dispositivos y verificación de audio y video.</p>
+  <p><a href="/servicios/">Ver servicios</a></p>
+</section>
+{{ end }}

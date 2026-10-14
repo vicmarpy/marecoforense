@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }} | Informática forense en Paraguay{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Description | default site.Params.description }}">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">{{ end }}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="envoltorio cabecera-fila">
+      <a class="marca" href="/">Mareco Forense</a>
+      <nav aria-label="Principal">
+        <ul>
+          {{ $actual := .RelPermalink }}
+          {{ range site.Menus.main }}
+          <li><a href="{{ .URL }}"{{ if hasPrefix $actual .URL }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido" class="envoltorio">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="pie">
+    <div class="envoltorio pie-fila">
+      <p>© {{ now.Year }} {{ site.Params.perito }}. Perito informático forense, matrícula CSJ N.º {{ site.Params.matricula }}.</p>
+      <p><a href="/index.xml">Suscribirse por RSS</a></p>
+    </div>
+  </footer>
+</body>
+</html>

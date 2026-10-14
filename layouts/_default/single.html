@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article>
+  <header class="pagina-cabecera">
+    <h1>{{ .Title }}</h1>
+    {{ if eq .Section "notas" }}
+    <p class="meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+      &ndash; {{ .ReadingTime }} min de lectura
+    </p>
+    {{ with .Params.tags }}
+    <ul class="etiquetas">
+      {{ range . }}<li><a href="/tags/{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  {{ if eq .Section "notas" }}
+  <aside class="aviso">
+    <p>Esta nota es informativa y general. No reemplaza un peritaje ni una opinión técnica sobre un caso concreto. <a href="/contacto/">Consultar un caso</a>.</p>
+  </aside>
+  {{ end }}
+</article>
+{{ end }}

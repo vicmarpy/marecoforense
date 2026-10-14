@@ -1,0 +1,14 @@
+{{ define "main" }}
+<header class="pagina-cabecera">
+  <h1>{{ if eq .Kind "term" }}Notas sobre {{ .Title }}{{ else }}{{ .Title }}{{ end }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+</header>
+<div class="lista">
+  {{ range .Paginator.Pages }}
+    {{ partial "nota-item.html" (dict "p" . "nivel" "h2") }}
+  {{ else }}
+    <p class="vacio">Todavía no hay notas publicadas.</p>
+  {{ end }}
+</div>
+{{ template "_internal/pagination.html" . }}
+{{ end }}
