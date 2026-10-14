@@ -1,8 +1,7 @@
-json
 {
-  "name": "marecoforense",
-  "compatibility_date": "2026-10-12",
-  "assets": {
-    "directory": "./public"
-  }
+“name”: “marecoforense”,
+“compatibility_date”: “2026-10-12”,
+“assets”: {
+“directory”: “./public”
 }
+} 
