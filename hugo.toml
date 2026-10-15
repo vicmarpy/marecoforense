@@ -19,7 +19,7 @@ disableKinds = ["taxonomy"]
 
   # ---- COMPLETAR ANTES DE PUBLICAR ----
   # Correo de contacto (ej.: "contacto@marecoforense.com.py")
-  email = "victor.mareco@me.com"
+  email = "contacto@marecoforense.com.py"
   # WhatsApp en formato internacional, solo números (ej.: "595981000000")
   whatsapp = "595992609498"
   # Teléfono para mostrar tal cual (opcional)
