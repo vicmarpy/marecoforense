@@ -2,7 +2,7 @@
 title: "Cadena de custodia de la evidencia digital: qué es y por qué importa"
 date: 2026-10-14
 # Nota de ejemplo. Está como borrador: no se publica hasta cambiar a false.
-draft: true
+draft: false
 description: "Una evidencia digital solo sirve si se puede demostrar que no cambió desde que se obtuvo. Eso es lo que documenta la cadena de custodia."
 tags: ["evidencia digital", "cadena de custodia"]
 ---
