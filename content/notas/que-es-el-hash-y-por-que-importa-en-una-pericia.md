@@ -1,6 +1,6 @@
 ---
 title: "Qué es el hash y por qué importa en una pericia"
-date: 2026-10-15
+date: 2026-10-26
 description: "El hash es la huella digital de un archivo. Explica cómo se usa para demostrar que una evidencia digital no fue alterada y cuáles son sus límites."
 draft: false
 ---
